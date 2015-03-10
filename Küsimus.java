@@ -11,6 +11,10 @@ public class Küsimus
 		this.vastus = vastus;
 	}
 
+	public String getKüsimus()
+	{
+		return küsimus;
+	}
 	public boolean kontrolli(String pakkumine)
 	{
 		if (pakkumine.equalsIgnoreCase(vastus))
@@ -22,7 +26,7 @@ public class Küsimus
 	@Override
 	public String toString()
 	{
-		return küsimus;
+		return küsimus + "---" + vastus;
 	}
 	
 	
