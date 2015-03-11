@@ -29,7 +29,7 @@ public class Skoorilugeja
 	@Override
 	public String toString()
 	{
-		return "Skoor: " + õigeid + "/" + kokku;
+		return "Tulemus: " + õigeid + "/" + kokku;
 	}
 	
 	

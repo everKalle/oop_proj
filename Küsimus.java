@@ -15,6 +15,12 @@ public class Küsimus
 	{
 		return küsimus;
 	}
+	
+	public String getVastus()
+	{
+		return vastus;
+	}
+	
 	public boolean kontrolli(String pakkumine)
 	{
 		if (pakkumine.equalsIgnoreCase(vastus))

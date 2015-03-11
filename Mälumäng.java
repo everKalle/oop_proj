@@ -25,7 +25,7 @@ public class Mälumäng
 		
 		
 		int küsimusi = Integer.parseInt(JOptionPane.showInputDialog(null, "Mitu küsimust? ", "Küsimuste arv", JOptionPane.QUESTION_MESSAGE));
-		
+		//mingi kontroll ka kas pandi arv või mitte
 		Skoorilugeja skoor = new Skoorilugeja();
 		
 		int nr;
@@ -36,24 +36,26 @@ public class Mälumäng
 			nr = (int)Math.round(Math.random()*(küsimused.size()-1));
 			vastus = JOptionPane.showInputDialog(null, küsimused.get(nr).getKüsimus(), "Küsimus", JOptionPane.QUESTION_MESSAGE);
 			
+			
 			skoor.lisaVastatud();
 			
 			if(küsimused.get(nr).kontrolli(vastus))
 			{
 				skoor.lisaPunkt();
+				JOptionPane.showMessageDialog(null, "Vastus õige", "Vastus õige", JOptionPane.INFORMATION_MESSAGE);
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Vastus vale\nÕige vastus: " + küsimused.get(nr).getVastus(), "Vastus vale", JOptionPane.ERROR_MESSAGE);
 			}
 			
 			küsimused.remove(nr);
-			
-			//Võiks näidata ka kohe, kas oli õige/vale vastus ning kui oli vale siis mis oli õige vastus;
 			
 			küsimusi--;
 		}
 		
 		//peaks listi "küsimused" alles jäänud elemendid faili tagasi kirjutama
-		
-		JOptionPane.showInputDialog(null, skoor, "Tulemus", JOptionPane.QUESTION_MESSAGE);
-		
+		JOptionPane.showMessageDialog(null, skoor, "Tulemus", JOptionPane.INFORMATION_MESSAGE);
 		
 	}
 }
